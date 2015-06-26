@@ -1,5 +1,67 @@
 current=0;
+learnmore_count = 1;
+teampage_current = 0;
+learnmore_open = false;
+function teampageswitcher(indiv){
+	$('#teampage_right_center').fadeOut(200);
+	$('#teampage_right_'+teampage_current).fadeOut(200);
+	$('#teampage_right_'+indiv).fadeIn(200);
+	teampage_current = indiv;
+}
+
+function howitworks(){
+	$main = $( '#pt-main' );
+	$pages = $main.children( 'div.pt-page' );
+	$currPage = $pages.eq(6);
+	$currPage.addClass('pt-page-current pt-page-moveFromBottom');
+	$('#learnmore_bottom_1').css('animation', 'moveFromBottom 1s ease both');
+	learnmore_open=true;
+}
+
+function howitworks_back(){
+	$currPage.removeClass('pt-page-current pt-page-moveFromBottom');
+	$currPage.addClass('pt-page-moveToBottom')
+}
+
+function learnmore_previous(){
+	if (learnmore_count>1){
+		learnmore_previous_core();
+	}
+}
+
+function learnmore_next(){
+	if (learnmore_count<3){
+		learnmore_next_core();
+	}
+}
+function learnmore_previous_core(){
+	$('#learnmore_top_center_'+learnmore_count).fadeOut(500);
+	$('#learnmore_bottom_'+learnmore_count).css('animation', 'moveToBottom 1s ease both');
+	$('#learnmore_top_center_'+learnmore_count).hide();
+	$('#learnmore_bottom_'+learnmore_count).hide();
+	learnmore_count--;
+	$('#learnmore_top_center_'+learnmore_count).show();
+	$('#learnmore_bottom_'+learnmore_count).show();
+	$('#learnmore_top_center_'+learnmore_count).fadeIn(600);
+	$('#learnmore_bottom_'+learnmore_count).css('animation', 'moveFromBottom 1s ease both');
+}
+
+function learnmore_next_core(){
+	$('#learnmore_bottom_'+learnmore_count).css('animation', 'moveToBottom 1s ease both');
+	$('#learnmore_top_center_'+learnmore_count).fadeOut(500);
+	$('#learnmore_bottom_'+learnmore_count).hide();
+	$('#learnmore_top_center_'+learnmore_count).hide();
+	learnmore_count++;
+	$('#learnmore_top_center_'+learnmore_count).show();
+	$('#learnmore_bottom_'+learnmore_count).show();
+	$('#learnmore_top_center_'+learnmore_count).fadeIn(600);
+	$('#learnmore_bottom_'+learnmore_count).css('animation', 'moveFromBottom 1s ease both');
+
+}
 function clickbutton(a){
+	// if (learnmore_open){
+	// 	howitworks_back();
+	// }
 	$('#'+current).removeClass('test');
 	$('#'+a).addClass('test');
 	$main = $( '#pt-main' );

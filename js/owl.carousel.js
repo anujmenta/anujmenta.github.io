@@ -129,7 +129,7 @@ if (typeof Object.create !== "function") {
 
         eachMoveUpdate : function () {
             var base = this;
-
+            $('#image_bounceup_'+this.currentItem).delay(100).css('animation', 'moveFromBottom 1s ease both');
             if (base.options.lazyLoad === true) {
                 base.lazyLoad();
             }
@@ -1468,7 +1468,7 @@ if (typeof Object.create !== "function") {
         autoPlay : true,
         stopOnHover : true,
 
-        navigation : false,
+        navigation : true,
         navigationText : ["prev", "next"],
         rewindNav : true,
         scrollPerPage : false,
@@ -1483,8 +1483,8 @@ if (typeof Object.create !== "function") {
         baseClass : "owl-carousel",
         theme : "owl-theme",
 
-        lazyLoad : false,
-        lazyFollow : true,
+        lazyLoad : true,
+        lazyFollow : false,
         lazyEffect : "fade",
 
         autoHeight : false,
@@ -1509,4 +1509,5 @@ if (typeof Object.create !== "function") {
         startDragging : false,
         afterLazyLoad: false
     };
+
 }(jQuery, window, document));

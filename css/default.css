@@ -34,10 +34,14 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+.codrops-top a:hover {
 	color: #fff;
 }
 
+.pt-page-7 a:hover{
+	opacity: 1;
+	cursor: pointer;
+}
 /*Home page left div*/
 #homepage_right{
 	background-image: url('images/mask_bg.png');
@@ -59,10 +63,9 @@ a:hover {
 #homepage_left_center{
 	width:60%;
 	margin-left: 20%;
-	margin-right: 20%;
+	/*margin-right: 20%;*/
 	margin-top: 20%;
 	height: 50%;
-
 }
 
 #homepage_right_center{
@@ -105,10 +108,219 @@ a:hover {
 #overview_left_center{
 	width:70%;
 	margin-left: 20%;
-	margin-right: 10%;
-	margin-top: 17%;
+	margin-top: 22%;
 	height: 50%;
 
+}
+
+#overview_right_top{
+	width: 70%;
+	margin-left: 10%;
+	margin-top: 8%;
+	height: 23%;
+}
+
+#overview_right_center{
+	width: 70%;
+	margin-left: 10%;
+	height: 20%;
+	margin-top: 3%;
+}
+#overview_right_bottom{
+	width: 70%;
+	margin-left: 10%;
+	height: 20%;
+	margin-top: 3%;
+}
+/*Team Page divs*/
+
+#teampage_right{
+	background-image: url('images/team_bg.png');
+	background-color: rgba(73, 71, 154, 0.9);
+	right: 0;
+	width: 50%;
+	height: 100%;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#teampage_left{
+	height: 100%;
+	left:0;
+	float: left;
+	width: 50%;
+	background: #fff;
+}
+
+#teampage_left_top{
+	width:100%;
+	height: 20%;
+}
+
+#teampage_left_center{
+	width: 70%;
+	margin-left: 15%;
+	height: 25%;
+	color: black;
+}
+
+#teampage_left_bottom{
+	width: 70%;
+	margin-top: 5%;
+	margin-left: 15%;
+	height: 25%;
+	color: black;
+}
+
+#teampage_right_center{
+	width: 100%;
+	height: 100%;
+	padding-left: 0%;
+	padding-top: 20%;
+}
+
+#teampage-carousel{
+	width:60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	height: 60%;
+	text-align: center;
+}
+
+#teampage_component1{
+	width: 32%;
+	height: 100%;
+	display: inline-block;
+}
+
+#teampage_component2{
+	width: 32%;
+	height: 100%;
+	display: inline-block;
+}
+
+#teampage_component3{
+	width: 32%;
+	height: 100%;
+	display: inline-block;
+}
+#teampage_component4{
+	width: 32%;
+	height: 100%;
+	display: inline-block;
+}
+
+#teampage_component5{
+	width: 32%;
+	height: 100%;
+	display: inline-block;
+}
+
+#teampage_component6{
+	width: 32%;
+	height: 100%;
+	display: inline-block;
+}
+
+.teampage_component{
+	padding-top: 20%;
+	font-weight: 300;
+}
+.teampage_right{
+	background-color: rgba(73, 71, 154, 0.94);
+	font-weight: 300;
+	font-size: 0.8em;
+	padding-top: 10%;
+	/*line-height: 1.2;*/
+	letter-spacing: 2px;
+	margin: 0;
+	text-align: left;
+	top: 12%;
+	width: 100%;
+	/*word-spacing: -0.3em;*/
+}
+
+.teampage_component{
+	background-color: rgba(73, 71, 154, 0.94);
+	font-weight: 300;
+	font-size: 0.8em;
+	padding-top: 10%;
+	/*line-height: 1.2;*/
+	letter-spacing: 2px;
+	margin: 0;
+	text-align: left;
+	top: 12%;
+	width: 100%;
+}
+#teampage_right h1{
+	font-size: 3.3em;
+	color: white;
+	font-weight: bold;
+}
+
+/*How it works divs*/
+#howitworks_right{
+	background: rgba(251, 251, 251, 1);
+	right: 0;
+	width: 50%;
+	height: 100%;
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+#howitworks_left{
+	height: 100%;
+	left:0;
+	float: left;
+	width: 50%;
+	background: #fff;
+
+}
+#howitworks_left_center{
+	position: relative;
+	margin-top: 15%;
+	margin-left: 20%;
+	width: 65%;
+	height: 300px;
+}
+
+#howitworks_right_center{
+	margin-top: 10%;
+	margin-left: 15%;
+	width: 60%;
+	height: 75%;
+}
+
+/*Learn more divs*/
+#learnmore_top{
+	width:70%;
+	margin-left: 15%;
+	height: 20%;
+	margin-top: 4%;
+}
+
+.learnmore_top_center{
+	margin-left: 20%;
+	width: 60%;
+	height: 100%;
+	text-align: center;
+	color: black;
+	opacity: 0.7;
+}
+#learnmore_center{
+	margin-left: 13%;
+	width: 70%;
+	height: 5%;
+	color:black; 
+	opacity:1;
+}
+
+#learnmore_bottom{
+	width:70%;
+	margin-left: 15%;
+	margin-top: 0%;
+	height: 60%;
 }
 /* Header Style */
 .codrops-top {
@@ -134,17 +346,16 @@ a:hover {
 	/*background: #fff;*/
 	text-transform: uppercase;
 	position: fixed;
-	padding-left: 12%;
 	width: 50%;
 	font-size: 0.79em;
 	line-height: 2.2;
 	z-index: 50000;
-	height: 15%;
+	height: 17%;
 	top: 0;
 	left: 0;
 	padding: 4px;
-	padding-top: 10px;
-	padding-left: 8%;
+	padding-top: 2%;
+	padding-left: 10%;
 	padding-right: 8px;
 }
 .codrops-top a {
@@ -161,9 +372,14 @@ a:hover {
 	opacity: 1;
 }
 
-#add p:hover + p{
+/*.text_button :hover{
 	background-color: #3fc380;
 	color:white;
+	cursor: hand;
+}
+*/
+.text_button{
+	cursor: pointer;
 }
 .codrops-top span.right {
 	float: right;
@@ -204,5 +420,8 @@ a:hover {
 @media screen and (max-width: 25em) { 
 	.codrops-icon span {
 		display: none;
+	}
+	body{
+		overflow: scroll;
 	}
 }
