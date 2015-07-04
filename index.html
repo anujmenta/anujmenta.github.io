@@ -5,259 +5,145 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Urbanpiper  | The customer management portal for you. </title>
+		<title>HungerBox</title>
 		<meta name="description" content="A Collection of Page Transitions with CSS Animations" />
 		<meta name="keywords" content="page transition, css animation, website, effect, css3, jquery" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/multilkevelmenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/multilevelmenu.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/animations.css" />
-		<script src="js/modernizr.custom.js"></script>
 		<script src="js/jquery-1.9.1.min.js"></script>
-		<!-- Important Owl stylesheet -->
 		<link rel="stylesheet" href="css/owl.carousel.css">
-		 
-		<!-- Default Theme -->
 		<link rel="stylesheet" href="css/owl.theme.css">
 		<script src="js/owl.carousel.js"></script>
+		<script src="js/modernizr.custom.js"></script>
 
-	<script type="text/javascript">
+		<script type="text/javascript">
 		$(document).ready(function() {
 
 			$("#homepage-carousel").owlCarousel();
-		 	navigation:true;
-		    navigationText: [
-		      "<i class='icon-chevron-left icon-white'><</i>",
-		      "<i class='icon-chevron-right icon-white'>></i>"
-    	  ];
+
 		});
 
 	</script>
 	</head>
-	<body>
-		<div class="codrops-top clearfix">
-			<a id='1' href="#" onclick="clickbutton(1)"><span>Overview</span></a>
-			<a id='2' href="#" onclick="clickbutton(2)"><span>Clients</span></a>
-			<a id='3' href="#" onclick="clickbutton(3)"><span>Team</span></a>
-			<a id='4'href="#" onclick="clickbutton(4)"><span>How it works</span></a>
-			<a id='5'href="#" onclick="clickbutton(5)"><span>Get in Touch</span></a>
-			<!--<ul class="dl-submenu pt-triggers">
-			<li data-animation="5"><a href="#">Fade / from right</a></li>
-			</ul>-->
-			<span class="right"><a id='0' onclick="clickbutton(0)" href="#"><span>Home</span></a></span>
+	<body>	
+		<div id='header' class="codrops-top clearfix">
+			<a id='1' class="codrops-icon codrops-icon-prev" onclick="teampageswitcher(1)"><span>About Us</span></a>
+			<a id='2' class="codrops-icon codrops-icon-prev" onclick="teampageswitcher(2)"><span>Why HungerBox</span></a>
+			<a id='3' class="codrops-icon codrops-icon-prev" onclick="teampageswitcher(3)"><span>How It Works</span></a>
+			<a id='4' class="codrops-icon codrops-icon-prev" onclick="teampageswitcher(4)"><span>Contact Us</span></a>
 		</div>
-		<!-- <div class="pt-triggers">
-			<button id="iterateEffects" class="pt-touch-button">Show next page transition</button>
-			<div id="dl-menu" class="dl-menuwrapper">
-				<button class="dl-trigger">Choose a transition</button>
-				<ul class="dl-menu">
-					<li>
-						<a href="#">Move</a>
-						<ul class="dl-submenu">
-							<li data-animation="1"><a href="#">Move to left/ from right</a></li>
-							<li data-animation="2"><a href="#">Move to right/ from left</a></li>
-							<li data-animation="3"><a href="#">Move to top/ from bottom</a></li>
-							<li data-animation="4"><a href="#">Move to bottom/ from top</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div> /dl-menu-wrapper-->
-		</div><!-- /triggers --> 
-		<!--Header with only the logo-->
-		<div class="codrops-bottom clearfix">
-			<img src='images/logo-temp.png' style="height: 60%;">			
-		</div>
-		<!-- Header End -->
+
 		<div id="pt-main" class="pt-perspective">
 			<div class="pt-page pt-page-1">
 				<div id='homepage_left'>
-					<div id='homepage_left_center'>
-						<h1>Close the loop with your Customers.</h1>
-						<p >We build mobile & web technologies for retailers onboard customers, analyse patterns and engage them through relevant messaging.</p>
-						<p class='text_button' id='add' style="opacity:1;" onmouseout="$(this).css({'background-color':'', 'color':'black'})" onmouseover="$(this).css({'background-color':'#3fc380', 'color':'white'})" onclick="clickbutton(4)">Get in touch</p>
+					<center><img src="images/logo.png" width='30%' style="margin-top:17%;"><br></center>
+					<div id='homepage_left_bottom'>
+					<center><img src="images/android.png" height='70px' style="margin-top:7%;"></center>
+					<center><p style="border: 3px rgb(237, 42, 38) solid; background-color:rgb(237, 42, 38); padding:8px; margin-left:33%; margin-right:33%; border-radius:7px; margin-top:5%;cursor:pointer;" onclick="ordernow()"><strong>Order Now</strong></p></center>
+					<!-- <img src="images/ios.png" height='62px' style=" margin-left:15%;"> -->
 					</div>
 				</div>
-				<div id='homepage_right' >
-					<!--<div class='homepage_right' id='homepage_right_center'><h1 style="color:white;">Delight your Customers</h1></div>-->
-						<div class='carousel-wrapper'>
+				<div id='homepage_right'>
+					<div id='hp_right_1_mask'>
+						<div class='homepage-right' id='hp_right_1'>
+							<p>We are a company based out of Bangalore with the big idea of changing the way you eat everyday. </p>
+
+							<p>On an average, an employee spends 40 minutes everyday at lunch, which translates to 200 minutes a week (for those of you still wondering, that is one entire Bollywood film). What we do is, ensure that you receive fresh and tasty meals that push you through your day.</p>
+							<p>
+							Sourced from certified caterers using the choicest ingredients, our daily rotating menu is designed for everyone's palate.</p>
+							<p>
+							Go ahead, give us a try and you just might find out what you have been missing.</p>
+							<p>
+							HungerBox. Eating, simplified.</p>
+						</div>
+						<div class='homepage-right' id='hp_right_2'>
+							<div id='why_right_top'>
+								<div id='why_right_1'><img src="images/arrow637.png" height="100%"></div>
+								<div id='why_right_2'><img src="images/checkbox.png" height="100%"></div>
+								<div id='why_right_3'><img src="images/peace9.png" height="100%"></div>
+							</div>
+							<div id='why_right_bottom'>
+								<div id='why_right_4'><img src="images/pin56.png" height="100%"></div>
+								<div id='why_right_5'><img src="images/landslide3.png" height="100%"></div>
+							</div>
+						</div>
+						<div class='homepage-right' id='hp_right_3'>
+							<div class='carousel-wrapper'>
 							<div id="homepage-carousel" class="owl-carousel">
 							  <div> 
 									 <h2><strong>Express Checkout</strong></h2>
-									 <img src="images/icon-express-checkout.png" height="40px">
 									 <p style="color:white;">With the prepaid wallet facility, customers no longer need to dig in for cash or card. All it takes is one scan! Gives you another way to incentivise customers by topping their wallet</p><br>
 									 <img id = 'image_bounceup_0' src="images/img-phone-payment.png" width="250px">
 							  </div>
 							  <div>
 								  	<h2><strong>Remote Ordering</strong></h2>
-								  	<img src="images/icon-remote-ordering.png" height="40px">
 									<p style="color:white;">Placing an order to the nearest store through the app drives convenience and number of orders. Besides, customers can request an order-ahead before driving/walking through-making the whole experience a breeze.</p>
 									<img id = 'image_bounceup_1' src="images/img-phone-ordering.png" width="250px">
 							  </div>
 							  <div >
-							  		<h2><strong>Analysis & Communication</strong></h2>
-							  		<img src="images/icon-analytics.png" height="40px">
+							  		<h2><strong>Analysis & Communication</strong></h2>	
 								  	<p style="color:white;word-spacing: 5px;">Access out feature rich CRM Portal to monitor various trends and deploy cross platform(App notifications, SMS, Email) campaigns in a targeted manner to your customers.</p><br><br>
 								  	<img id = 'image_bounceup_2' src="images/img-phone-loyalty.png" width="400px">
 							  </div>
 							</div>
 						</div>
+						</div>
+						<div class='homepage-right' id='hp_right_4'>
+							<center><h2 >Contact us</h2>
+							<p> Give us a call at +91 9900914255</p>
+							<p> Else drop us a mail at hello@hungerbox.com</p></center>
+						</div>
+					</div>					
 				</div>
 			</div>
 			<div class="pt-page pt-page-2">
-				<div id='overview_left'>
-					<div id='overview_left_center'>
-						<p >Our technology platform assists retail merchants deliver a <span style='color:rgba(63, 195, 128, 1)'><strong>modern customer experience</strong></span>, through a <span style='color:rgba(63, 195, 128, 1)'><strong>convergence of transactional</strong></span> and <span style='color:rgba(63, 195, 128, 1)'><strong>loyalty</strong></span> interactions, using <span style='color:rgbargba(63, 195, 128, 1)'><strong>smartphones</strong></span> and other channels.</p><br>
-						<p style="word-spacing:2px;">Our Value proposition lies in providing end-to-end solution to merchants for on-boarding ( connect ) their customers, analyse patterns in their interactions ( comprehend ), and then engage them through relevant and contextual messaging ( communicate ).</p>
-						<!--<p class='text_button' style="font-size: 0.7em; padding-left:6px; padding-top:5px; height:30px; border-radius:20px; border: 2px solid rgba(73, 71, 154, 1); width:100px; color:rgba(73, 71, 154, 1);">Get in touch</p>-->
-					</div>
-				</div>
-				<div id='overview_right' >
-					<div id="overview_right_top">
-						<p style="font-size:1.2em;"><b><span >Conn</span>ect</b></p> 
-						<p>Incentivise and delight your customers with <strong>smartphone app, feature phone, gift cards, prepaid wallet syste.</strong> We integrate with your Point-of-Sale, so your customer on-boarding experience is seamelss.</p>
-					</div>
-					<div id="overview_right_center" >
-						<p style="font-size:1.2em;"><b><span >Compre</span>hend</b></p> 
-						<p >Analyse and attract your customer engagement with our <strong>Hosted Analytics Portal.</strong> Learn from customer's purchasing profile and identify interesting patterns in repeat customers.</p>
-					</div>
-					<div id="overview_right_bottom">
-						<p style="font-size:1.2em;"><b><span >Commun</span>icate</b></p> 
-						<p>Easily segment your customers across different platforms like - purchase amount, visit frequency, affinity for products, store location wise, etc - Identify and target them using our in-built <strong>bulk messaging platform</strong></p>
-					</div>
+			<div id='close-icon' style="margin-top:20px; color:white; cursor:pointer ;float:right; margin-right:20px">
+	                    <span aria-hidden="true" onclick="ordernow_back()"><!-- &times; -->Close</span></div>
+				<div id='locations_list'><center>
+				<h2> Select Location :</h2>
+				<p id = 'location_1' class="locations-list" onclick="ordernext(this.id)"> Koramangala</p>
+				<p id = 'location_2' class="locations-list" onclick="ordernext(this.id)"> Domlur</p>
+				<p id = 'location_3' class="locations-list" onclick="ordernext(this.id)"> Ejipura</p>
+				</center>
 				</div>
 			</div>
-			<div class="pt-page pt-page-3"><img src="images/learnmore1.png"></div>
+			<div class="pt-page pt-page-3">
+				<div id='close-icon' style="margin-top:20px; color:white; cursor:pointer ;float:right; margin-right:20px">
+	                    <span aria-hidden="true" onclick="ordernext_back()"><!-- &times; -->Close</span></div>
+	                <h2 style="padding-left:40px;text-align:center"> Choose from our Menu</h2>
+	                <h2 id='carttext' style="float:right; padding-right:20px"></h2>
+	                <p id='checkout_button' class = 'locations-list' style="text-align:center;float:right;margin-right:10px;margin-top:20px;background-color:rgb(237, 42, 38);display:none;" onclick="ordersummary()">Checkout</p>
+	                <div id='menu_list_wrapper'>
+	                </div>
+			</div>
 			<div class="pt-page pt-page-4">
-				<div id='teampage_left'>
-					<div id='teampage_left_top'></div>
-					<div id='teampage_left_center'>
-						<div id='teampage_component1' onclick="teampageswitcher(1)">
-							<img src="images/saurabh.jpg" style="border-radius:50%" height="90%;">
-							<p style="opacity:0.7;text-align:center">Saurabh Gupta</p>
-						</div>
-						<div id='teampage_component2' onclick="teampageswitcher(2)">
-							<img src="images/anirban.jpg" style="border-radius:50%" height="90%;">
-							<p style="opacity:0.7;text-align:center">Anirban Majumdar</p>
-						</div>
-						<div id='teampage_component3' onclick="teampageswitcher(3)">
-							<img src="images/devarshi.jpg" style="border-radius:50%" height="90%;">
-							<p style="opacity:0.7;text-align:center">Devarshi Jain</p>
-						</div>
-					</div>
-					<div id='teampage_left_bottom'>
-						<div id='teampage_component4' onclick="teampageswitcher(4)">
-							<img src="images/arif.jpeg" style="border-radius:50%" height="90%;">
-							<p style="opacity:0.7;text-align:center">Arif Iqbal Bhuyan</p>
-						</div>
-						<div id='teampage_component5' onclick="teampageswitcher(5)">
-							<img src="images/avnee.jpg" style="border-radius:50%" height="90%;">
-							<p style="opacity:0.7;text-align:center">Avnee Nathani</p>
-						</div>
-						<div id='teampage_component6' onclick="teampageswitcher(6)">
-							<img src="images/anurag.jpeg" style="border-radius:50%" height="90%;">
-							<p style="opacity:0.7;text-align:center">Anurag Bisht</p>
-						</div>
-					</div>
-				</div>
-				<div id='teampage_right' >
-					<div class='teampage_right' id='teampage_right_center'>
-						<h1 style="padding-left:15%;">We are a Bangalore <br>based Startup.</h1>
-						<p style="text-align:left;line-height:1.5; padding-left:15%;opacity:0.7">We are a team dedicated to delivering high returns <br>for your business. We are part of NASSCOM 10,000<br> Startup initiative.</p>
-					</div>
-					<div class='teampage_component' id='teampage_right_1' style="height:100%; width:100%;" hidden>
-						<div style="width:100%;padding-left:39%;"><img src="images/saurabh.jpg" style="border-radius:50%;" width="30%;"></div>
-							<p style="opacity:1;padding-left:39%; font-size:1.5em;"><strong>Saurabh Gupta</strong></p>
-							<p style="text-align:center;line-height:1.5;letter-spacing:0px;;font-size: 1.2em;font-weight: normal;">We are a team dedicated to delivering high returns <br>for your business. We are part of NASSCOM 10,000<br> Startup initiative.</p>
-					</div>
-					<div class='teampage_component' id='teampage_right_2' style="height:100%; width:100%;" hidden>
-						<div style="width:100%;padding-left:39%;"><img src="images/anirban.jpg" style="border-radius:50%;" width="30%;"></div>
-							<p style="opacity:1;padding-left:39%; font-size:1.5em;"><strong>Anirban Majumdar</strong></p>
-							<p style="text-align:center;line-height:1.5;letter-spacing:0px;;font-size: 1.2em;font-weight: normal;">We are a team dedicated to delivering high returns <br>for your business. We are part of NASSCOM 10,000<br> Startup initiative.</p>
-					</div>
-					<div class='teampage_component' id='teampage_right_3' style="height:100%; width:100%;" hidden>
-						<div style="width:100%;padding-left:39%;"><img src="images/devarshi.jpg" style="border-radius:50%;" width="30%;"></div>
-							<p style="opacity:1;padding-left:39%; font-size:1.5em;"><strong>Devarshi Jain</strong></p>
-							<p style="text-align:center;line-height:1.5;letter-spacing:0px;;font-size: 1.2em;font-weight: normal;">We are a team dedicated to delivering high returns <br>for your business. We are part of NASSCOM 10,000<br> Startup initiative.</p>
-					</div>
-					<div class='teampage_component' id='teampage_right_4' style="height:100%; width:100%;" hidden>
-						<div style="width:100%;padding-left:39%;"><img src="images/arif.jpeg" style="border-radius:50%;" width="30%;"></div>
-							<p style="opacity:1;padding-left:35%; font-size:1.5em;"><strong>Arif Iqbal Bhuyan</strong></p>
-							<p style="text-align:center;line-height:1.5;letter-spacing:0px;;font-size: 1.2em;font-weight: normal;">We are a team dedicated to delivering high returns <br>for your business. We are part of NASSCOM 10,000<br> Startup initiative.</p>
-					</div>
-					<div class='teampage_component' id='teampage_right_5' style="height:100%; width:100%;" hidden>
-						<div style="width:100%;padding-left:39%;"><img src="images/avnee.jpg" style="border-radius:50%;" width="30%;"></div>
-							<p style="opacity:1;padding-left:39%; font-size:1.5em;"><strong>Avnee Nathani</strong></p>
-							<p style="text-align:center;line-height:1.5;letter-spacing:0px;;font-size: 1.2em;font-weight: normal;">We are a team dedicated to delivering high returns <br>for your business. We are part of NASSCOM 10,000<br> Startup initiative.</p>
-					</div>
-					<div class='teampage_component' id='teampage_right_6' style="height:100%; width:100%;" hidden>
-						<div style="width:100%;padding-left:39%;"><img src="images/anurag.jpeg" style="border-radius:50%;" width="30%;"></div>
-							<p style="opacity:1;padding-left:39%; font-size:1.5em;"><strong>Anurag Bisht</strong></p>
-							<p style="text-align:center;line-height:1.5;letter-spacing:0px;;font-size: 1.2em;font-weight: normal;">We are a team dedicated to delivering high returns <br>for your business. We are part of NASSCOM 10,000<br> Startup initiative.</p>
-					</div>
-				</div>
-			</div>
-			<div class="pt-page pt-page-5">
-				<div id='howitworks_left'>
-					<div id="howitworks_left_center">
-						<h3 style="color:rgba(73, 71, 154, 1);">Easy setup & Deployment <br/><span>for Merch</span>ants</h3><br>
-						<h3 style="color: rgba(73, 71, 154, 1);"> Integration</h3>
-						<p style="color:black;">Choose between a deep integration with your Point of Sale(POS) system, or a zero-integration mode depending on your choice of modules.</p>
-						<h3 style="color: rgba(73, 71, 154, 1);"> Configure</h3>
-						<p style="color:black;">Choose the modules-Ordering, Payment and Loyalty. Enable them for  Online or Offline interactions.</p>
-						<h3 style="color: rgba(73, 71, 154, 1);"> Analysis & Communication</h3>
-						<p style="color:black"> Access our feature rich CRM portal to monitor various trends and deploy cross platform (App/Notifications/SMS/Email) campaigns in a targeted manner to your customers.</p>
-						<p class='text_button' style="opacity:1;color:black;" onmouseout="$(this).css({'background-color':'', 'color':'black'})" onmouseover="$(this).css({'background-color':'#3fc380', 'color':'white'})" onclick="howitworks()">Know More</p>
-					</div>
-				</div>
-				<div id='howitworks_right' >
-					<div id="howitworks_right_center">
-						<h3 style="color:rgba(73, 71, 154, 1);">Delight your <br/><span>Custome</span>rs</h3><br>
-						<h3 style="color: rgba(73, 71, 154, 1);"> Express Checkout</h3>
-						<p style="color:black;">With the prepaid wallet facility, customers no longer need to dig in for cash or card. All it takes is one scan.</p>
-						<h3 style="color: rgba(73, 71, 154, 1);"> Loyalty</h3>
-						<p style="color:black;">Remind your customers of the benefits when they make a payment. Give them a reason to keep coming back for more.</p>
-						<h3 style="color: rgba(73, 71, 154, 1);"> Remote Ordering</h3>
-						<p style="color:black">Placing an order to the nearest store through the app drives is convinient. Customers can order ahead before walking in.</p>
-						<h3 style="color: rgba(73, 71, 154, 1);"> 2-Way Feedback</h3>
-						<p style="color:black">Build trust with your customers by allowing them to give feedback. It provides a way for business to measure customer sentiments.</p>
-					</div>
-
-				</div>
-			</div>
-			<div class="pt-page pt-page-6"></div>
-			<div class="pt-page pt-page-7">
-				<div id='close-icon' style="margin-top:50px; color:black; cursor:pointer ;float:right; margin-right:50px">
-	                    <span aria-hidden="true" onclick="howitworks_back()">&times;</span>
-	                    <span class="sr-only"></span>
+	            <div id='ordersummary_left'>
+	            <h1 style="color:black;"> User Details</h1>
+				    <form id='ajax-contact-form' action="">
+			                <input id='asf' type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" /><br>
+			                <input type="text" name="name" value="" placeholder="Name" style="color:white;margin-top:0px;" /><br>
+			                <input type="text" name="phone" value="" placeholder="Phone" /><br>
+			                <input type="text" id='Area' name="area" value="" readonly/><br>
+			                <textarea name="message" id="message" placeholder="Address"></textarea>
+			                <!-- <input type="submit" class="contact_btn send_btn" value="Send" /> -->
+			        </form>
 	            </div>
-	            <!--<div id='learnmore_top_1' style="margin-left:25%;" hidden><h1 style="color:black"> Manage, Monitor & Analyze</h1></div>
-	            <p onmouseover="$('#learnmore_top_1').fadeIn(500);" onmouseout="$('#learnmore_top_1').fadeOut(500);" style="color:black; margin-top:100px">Show Yourselves</p>-->
-	            <div id='learnmore_top'>
-	            	<div class='learnmore_top_center' id='learnmore_top_center_1'>
-	            		<h1 style="color:black;padding-left:13%;"> Manage, Monitor & Analyze</h1>
-	            		<p>Our Dashboard becomes your command center for your <br>business. Manage new customer sign ups, monitor customer <br>visits and analyze trends.</p>
-	            	</div>
-	            	<div class='learnmore_top_center' id='learnmore_top_center_2' hidden>
-	            		<h1 style="color:black"> Analyze Customer Frequency</h1>
-	            		<p>Our Dashboard becomes your command center for your <br>business. Manage new customer sign ups, monitor customer <br>visits and analyze trends.</p>
-	            	</div>
-	            	<div class='learnmore_top_center' id='learnmore_top_center_3' hidden>
-	            		<h1 style="color:black"> Monitor Sales Across Locations</h1>
-	            		<p>Our Dashboard becomes your command center for your <br>business. Manage new customer sign ups, monitor customer <br>visits and analyze trends.</p>
-	            	</div>
-	            	<!--<p style="color:black;"> Previous | Next</p>-->
-	            </div>
-	            <div id='learnmore_center' style="text-align:center;">
-	            	<p style="color:black;;"> <a onclick="learnmore_previous()"> Previous </a>| <a onclick="learnmore_next()">Next</a></p>
-	            </div>
-	            <div id='learnmore_bottom' style="/*animation:moveFromBottom .6s ease both;*/">
-	            	<img id='learnmore_bottom_1' src="images/crm-dashboard.png" width="100%;">
-	            	<img id='learnmore_bottom_2' src="images/crm-frequency-analysis.png" width="100%;"> 
-	            	<img id='learnmore_bottom_3' src="images/crm-sku-location-distribution.png" width="100%;">
+	            <div id='ordersummary_right'>
+	            <h1>Order Summary</h1>
+	            	<div id='close-icon' style="margin-top:50px; color:white; cursor:pointer ;float:right; margin-right:50px">
+	                    <span aria-hidden="true" onclick="ordersummary_back()">&times;</span></div>
+	                <div id='ordersummary_right_wrapper'>
+	                </div>
+	                <center><p id = 'checkout' class="locations-list" onclick=""> Checkout</p></center>
 	            </div>
 			</div>
+			<!--<div class="pt-page pt-page-5"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
+			<div class="pt-page pt-page-6"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div> -->
+		</div>
 
 		<div class="pt-message">
 			<p>Your browser does not support CSS animations.</p>
@@ -265,6 +151,5 @@
 
 		<script src="js/jquery.dlmenu.js"></script>
 		<script src="js/pagetransitions.js"></script>
-
 	</body>
 </html>
