@@ -223,10 +223,10 @@ function counter_minus(event1){
 function teampageswitcher(indiv){
 	$('#'+hp_current).removeClass('test');
 	$('#'+indiv).addClass('test');
-	if (hp_current==indiv){
-		hp_current=0;
-		indiv=0;
-	}
+	// if (hp_current==indiv){
+	// 	hp_current=0;
+	// 	indiv=0;
+	// }
 	// $('#teampage_right_center').fadeOut(700);
 	$('#homepage_right').css('background-image', 'url(images/background'+indiv+'.jpg)');
 	if (indiv==2){
