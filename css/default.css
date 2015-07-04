@@ -338,7 +338,14 @@ a:hover {
 	/*background-color: red;*/
 }
 
-
+.pt-page-1 h1{
+	font-size: 1.4em;
+	color:rgba(237, 42, 38, 1);
+	margin: 0;
+	text-transform: none !important;
+	letter-spacing: 3px !important;
+	font-weight: 500 !important;
+}
 .ordersummary_table_left{
 	position: absolute;
 	height: 50px;
