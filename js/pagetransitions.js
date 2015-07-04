@@ -1,14 +1,32 @@
 // $(document).ready(function(){
- 
-//    $.ajax({
-//    	type:'GET',
-//     url: 'http://www.hungerbox.in/get_mobile.php',
-//     data: {'item':'menus','p':'8892824665'},
-//     dataType: 'json/application',
-//     success: function menupopulater(json){},
-// 	});
-
+//  	json_call_lunch(location_id);
+//  	json_call_snacks(location_id);
 // });
+
+function json_call_lunch(location_id){
+   $.ajax({
+   	type:'GET',
+    url: 'http://www.hungerbox.in/get_mobile.php',
+    data: {'item':'get_lunch','location':location_id},
+    dataType: 'json/application',
+    success: function (json){
+    	json1 = json;
+    },
+	});
+}
+
+
+function json_call_snacks(location_id){
+   $.ajax({
+   	type:'GET',
+    url: 'http://www.hungerbox.in/get_mobile.php',
+    data: {'item':'get_snacks','location':location_id},
+    dataType: 'json/application',
+    success: function (json){
+    	json2 = json;
+    },
+	});
+}
 
 hp_current = 1;
 
@@ -20,9 +38,23 @@ order_cart_items = [];
 
 var cart = {};
 // order_quantity = 0;
+var json2 = '';
 var json1 = {"num":2,"menus":[{"name":"Veg Meal","id":731,"items":"Mixed vegetables in sweet and sour gravy and dry chilli mushroom served with schezwan noodles","price":90,"discount":0,"vendor":"Swaad","quantity":9,"is_veg":1,"is_premium":0},{"name":"Non Veg Meal","id":732,"items":"NA","price":100,"discount":0,"vendor":"Swaad","quantity":10,"is_veg":0,"is_premium":0}],"dt":"Friday, 03-07-2015"};
-function menupopulater(json){
-	console.log('entered');
+var json_locations = [{"drop_point":"Bellandur","location_id":63},{"drop_point":"BTM Layout","location_id":64},{"drop_point":"Domlur","location_id":59},{"drop_point":"HSR layout","location_id":62},{"drop_point":"Indiranagar","location_id":61},{"drop_point":"Koramangala","location_id":60}]
+function menupopulater(json, type){
+	if (type=='lunch'){
+		$('#menu_lunch').css('background-color', 'white');
+		$('#menu_lunch').css('color', 'black');
+		$('#menu_snacks').css('background-color', '');
+		$('#menu_snacks').css('color', 'white');	
+	}
+	else{
+		$('#menu_snacks').css('background-color', 'white');
+		$('#menu_snacks').css('color', 'black');
+		$('#menu_lunch').css('background-color', '');
+		$('#menu_lunch').css('color', 'white');	
+	}
+	$('#menu_list_wrapper').empty();
 	var num = json.num;
 	var menuitems = json.menus;
 	var master = document.getElementById('menu_list_wrapper');
@@ -146,10 +178,11 @@ function menupopulater(json){
 
 }
 
-menupopulater(json1);
+// menupopulater(json1);
 
 function counter_plus(event1){
 	$('#checkout_button').fadeIn(500);
+	$('#menu_lunch').css('margin-left', '27%');
 	console.log(event1);
 	// $('#checkout_button').fadeIn(500);
 	var id = event1.substr(event1.length - 3);
@@ -159,10 +192,19 @@ function counter_plus(event1){
 	document.querySelector('#menu_item_count_'+id).innerHTML = order_quantity;
 	order_cart_items.push(id);
 	cart[id] +=1;
-	document.querySelector('#carttext').innerHTML = 'Selected: '+order_cart_items.length+' Items';
+	document.querySelector('#carttext').innerHTML = 'Selected: '+cart_length()+' Items';
 	// $('#menu_item_count').
 }
 
+function cart_length(){
+	num = json1.menus.length;
+	var menuitems = json1.menus;
+	var numitems = 0;
+	for (var i=0; i<num; i++){
+		numitems += cart[menuitems[i].id];
+	}
+	return numitems
+}
 function counter_minus(event1){
 	console.log(event1);
 	var id = event1.substr(event1.length - 3);
@@ -213,6 +255,24 @@ function teampageswitcher(indiv){
 }
 
 function ordernow(){
+	// num = json1.menus.length;
+	// var menuitems = json1.menus;
+	// for (var i=0; i<num; i++){
+	// 	cart[menuitems[i].id] = 0;
+	// }
+	$('#locations_list').empty();
+	var locationlist = document.getElementById('locations_list');
+	var heading = document.createElement('h2');
+	heading.innerHTML = ' Select Location :';
+	locationlist.appendChild(heading);
+	for (var i=0; i<json_locations.length; i++){
+		var locationp = document.createElement('p');
+		locationp.className = 'locations-list';
+		locationp.setAttribute('id', 'location_'+json_locations[i].location_id)
+		locationp.innerHTML = json_locations[i].drop_point;
+		locationp.setAttribute('onclick', 'ordernext(this.id)');
+		locationlist.appendChild(locationp);
+	}
 	$main = $( '#pt-main' );
 	$pages = $main.children( 'div.pt-page' );
 	$currPage = $pages.eq(1);
@@ -221,14 +281,23 @@ function ordernow(){
 	$('#header').hide();
 }
 
+function jsongen(){
+	cart_json=[]
+	for (var index in cart){
+		cart_json.push({"item_id":index, "quantity": cart[index], "item_name":returnname(index), "price":returnprice(index)})
+	}
+	return cart_json
+}
+
 function ordernow_back(){
-	$currPage.removeClass('pt-page-moveFromBottom');
-	$currPage.addClass('pt-page-moveToBottom');
+	$pages.eq(1).removeClass('pt-page-moveFromBottom');
+	$pages.eq(1).addClass('pt-page-moveToBottom');
 	$('#header').show();
 }
 
 function ordernext(areaid){
 	area = document.getElementById(areaid).innerHTML;
+	location_id = area;
 	$main = $( '#pt-main' );
 	$pages = $main.children( 'div.pt-page' );
 	$currPage = $pages.eq(1);
@@ -240,10 +309,17 @@ function ordernext(areaid){
 }
 
 function ordernext_back(){
-	$nextPage.removeClass('pt-page-moveFromRight');
-	$nextPage.addClass('pt-page-moveToRight');
+	$pages.eq(2).removeClass('pt-page-moveFromRight');
+	$pages.eq(2).addClass('pt-page-moveToRight');
 	// $currPage.removeClass('pt-page-moveFromRight');
 	// $currPage.addClass('pt-page-moveToRight');
+}
+
+
+function ordernext_close(){
+	ordernext_back();	
+	ordernow_back();
+
 }
 
 function ordersummary(){
@@ -258,6 +334,31 @@ function ordersummary(){
 	ordersummary_tablepopulate();
 }
 
+function ordersummary_back(){
+	$pages.eq(3).removeClass('pt-page-moveFromRight');
+	$pages.eq(3).addClass('pt-page-moveToRight');
+}
+
+function thankyouscreen_back(){
+	$pages.eq(4).removeClass('pt-page-moveFromRight');
+	$pages.eq(4).addClass('pt-page-moveToRight');
+}
+
+function closeall(){
+	thankyouscreen_back();
+	ordersummary_back();
+	ordernext_close();
+}
+
+function thankyouscreen(){
+	$main = $( '#pt-main' );
+	$pages = $main.children( 'div.pt-page' );
+	$currPage = $pages.eq(3);
+	$nextPage = $pages.eq(4);
+	$nextPage.addClass('pt-page-current');
+	// $currPage.removeclass('pt-page-current pt-page-moveFromBottom');
+	$nextPage.addClass('pt-page-moveFromRight');
+}
 function returnname(id_use){
 	for(var i = 0; i < json1.menus.length; i++)
 	{
@@ -309,11 +410,6 @@ function ordersummary_tablepopulate(){
 	total.innerHTML = 'Total Amount:  Rs'+returntotalamount();
 	total.className = 'ordersummary_table_total';
 	table.appendChild(total);
-}
-
-function ordersummary_back(){
-	$nextPage.removeClass('pt-page-moveFromRight');
-	$nextPage.addClass('pt-page-moveToRight');
 }
 
 var PageTransitions = (function() {

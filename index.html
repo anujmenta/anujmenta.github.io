@@ -75,19 +75,19 @@
 							<div class='carousel-wrapper'>
 							<div id="homepage-carousel" class="owl-carousel">
 							  <div> 
-									<!-- <h2><strong>Express Checkout</strong></h2>
+									 <h2><strong>Express Checkout</strong></h2>
 									 <p style="color:white;">With the prepaid wallet facility, customers no longer need to dig in for cash or card. All it takes is one scan! Gives you another way to incentivise customers by topping their wallet</p><br>
-									 <img id = 'image_bounceup_0' src="images/img-phone-payment.png" width="250px">-->
+									 <img id = 'image_bounceup_0' src="images/img-phone-payment.png" width="250px">
 							  </div>
 							  <div>
-								  	<!--<h2><strong>Remote Ordering</strong></h2>
+								  	<h2><strong>Remote Ordering</strong></h2>
 									<p style="color:white;">Placing an order to the nearest store through the app drives convenience and number of orders. Besides, customers can request an order-ahead before driving/walking through-making the whole experience a breeze.</p>
-									<img id = 'image_bounceup_1' src="images/img-phone-ordering.png" width="250px">-->
+									<img id = 'image_bounceup_1' src="images/img-phone-ordering.png" width="250px">
 							  </div>
 							  <div >
-							  		<!--<h2><strong>Analysis & Communication</strong></h2>	
+							  		<h2><strong>Analysis & Communication</strong></h2>	
 								  	<p style="color:white;word-spacing: 5px;">Access out feature rich CRM Portal to monitor various trends and deploy cross platform(App notifications, SMS, Email) campaigns in a targeted manner to your customers.</p><br><br>
-								  	<img id = 'image_bounceup_2' src="images/img-phone-loyalty.png" width="400px">-->
+								  	<img id = 'image_bounceup_2' src="images/img-phone-loyalty.png" width="400px">
 							  </div>
 							</div>
 						</div>
@@ -103,20 +103,22 @@
 			<div class="pt-page pt-page-2">
 			<div id='close-icon' style="margin-top:20px; color:white; cursor:pointer ;float:right; margin-right:20px">
 	                    <span aria-hidden="true" onclick="ordernow_back()"><!-- &times; -->Close</span></div>
-				<div id='locations_list'><center>
-				<h2> Select Location :</h2>
-				<p id = 'location_1' class="locations-list" onclick="ordernext(this.id)"> Koramangala</p>
-				<p id = 'location_2' class="locations-list" onclick="ordernext(this.id)"> Domlur</p>
-				<p id = 'location_3' class="locations-list" onclick="ordernext(this.id)"> Ejipura</p>
-				</center>
+				<center><div id='locations_list'>
 				</div>
+				</center>
 			</div>
 			<div class="pt-page pt-page-3">
 				<div id='close-icon' style="margin-top:20px; color:white; cursor:pointer ;float:right; margin-right:20px">
-	                    <span aria-hidden="true" onclick="ordernext_back()"><!-- &times; -->Close</span></div>
-	                <h2 style="padding-left:40px;text-align:center"> Choose from our Menu</h2>
+	                    <span aria-hidden="true" onclick="ordernext_close()"><!-- &times; -->Close</span></div>
+	             <div id='back-icon-icon' style="margin-top:20px; color:white; cursor:pointer ;float:left; margin-left:20px">
+	                    <span aria-hidden="true" onclick="ordernext_back()"><!-- &times; -->Back</span></div>
+	                <h2 id='menu_heading' style="padding-left:40px;text-align:center"> </h2>
 	                <h2 id='carttext' style="float:right; padding-right:20px"></h2>
 	                <p id='checkout_button' class = 'locations-list' style="text-align:center;float:right;margin-right:10px;margin-top:20px;background-color:rgb(237, 42, 38);display:none;" onclick="ordersummary()">Checkout</p>
+	                <center>
+	                	<p id = 'menu_lunch' class="locations-list" style='display:inline-block' onclick="menupopulater(json1,'lunch')"> Lunch</p>
+	                	<p id = 'menu_snacks' class="locations-list" style='display:inline-block' onclick="menupopulater(json2,'snacks')"> Snacks</p>
+	                </center>
 	                <div id='menu_list_wrapper'>
 	                </div>
 			</div>
@@ -135,14 +137,19 @@
 	            <div id='ordersummary_right'>
 	            <h1>Order Summary</h1>
 	            	<div id='close-icon' style="margin-top:50px; color:white; cursor:pointer ;float:right; margin-right:50px">
-	                    <span aria-hidden="true" onclick="ordersummary_back()">&times;</span></div>
+	                    <span aria-hidden="true" onclick="ordersummary_back()"><!-- &times; -->Edit</span></div>
 	                <div id='ordersummary_right_wrapper'>
 	                </div>
-	                <center><p id = 'checkout' class="locations-list" onclick=""> Checkout</p></center>
+	                <center><p id = 'checkout' class="locations-list" onclick="thankyouscreen()"> Checkout</p></center>
 	            </div>
 			</div>
-			<!--<div class="pt-page pt-page-5"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
-			<div class="pt-page pt-page-6"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div> -->
+			<div class="pt-page pt-page-5">
+				<h1 style="word-spacing:-0.1em;"><strong>Thank You</strong> for Ordering</h1>
+				<p id='orderid' style="font-size:1.5em;"> Order Id: 12345 </p>
+				<br><br>
+				<center><p id = 'redirectohome' class="locations-list" onclick="closeall()" style="width:200px;"> Back to Home Page</p></center>
+			</div>
+			<!--<div class="pt-page pt-page-6"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div> -->
 		</div>
 
 		<div class="pt-message">

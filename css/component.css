@@ -61,7 +61,7 @@ html, body { height: 100%; }
 	width: 100%;
 	text-align: center;
 	text-transform: uppercase;
-	word-spacing: 0em;
+	word-spacing: -0.2em;
 }
 
 .pt-page h1 span {
@@ -76,7 +76,7 @@ html, body { height: 100%; }
 }
 
 .pt-page h1 strong {
-	color: rgba(0,0,0,0.1);
+	color: rgba(0,0,0,0.4);
 }
 
 .pt-page-1 {
@@ -95,11 +95,12 @@ html, body { height: 100%; }
 .pt-page-4 {
 	background: #fff;
 }
-/*
+
 .pt-page-5 {
 	background: #fd6a62;
+	text-align: center;
 }
-
+/*
 .pt-page-6 {
 	background: #f68dbb;
 }*/
