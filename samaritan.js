@@ -1,7 +1,7 @@
 $State = {
     isText: false,
-    wordTime: 750, // Time to display a word
-    wordAnim: 150, // Time to animate a word
+    wordTime: 500, // Time to display a word
+    wordAnim: 100, // Time to animate a word
     randomInterval: 18000,
     lastRandomIndex: -1,
     randomTimer: null,
