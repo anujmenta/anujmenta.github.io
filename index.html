@@ -13,14 +13,23 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         
         <script>
-            var commands = {
-              // annyang will capture anything after a splat (*) and pass it to the function.
-              // e.g. saying "Show me Batman and Robin" is the same as calling showFlickr('Batman and Robin');
-              'show me *tag': printGreeting,
-            };
-            
-            var printGreeting = function(tag) {
-              console.log(tag);
+            if (annyang) {
+              // Let's define our first command. First the text we expect, and then the function it should call
+              var commands = {
+                  // annyang will capture anything after a splat (*) and pass it to the function.
+                  // e.g. saying "Show me Batman and Robin" is the same as calling showFlickr('Batman and Robin');
+                  'show me *tag': printGreeting,
+                };
+
+                var printGreeting = function(tag) {
+                  console.log(tag);
+                }
+
+              // Add our commands to annyang
+              annyang.addCommands(commands);
+
+              // Start listening. You can call this here, or attach this call to an event, button, etc.
+              annyang.start();
             }
         </script>
     </head>
