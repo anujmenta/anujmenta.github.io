@@ -21,11 +21,15 @@
                     console.log('First voice command recieved');
                     executeSamaritan("Hello master");
                     };
+              var howareyoudoing = function(){
+                    executeSamaritan("I am doing just fine. How are you?");
+                    };
               // Let's define our first command. First the text we expect, and then the function it should call
               var commands = {
                   // annyang will capture anything after a splat (*) and pass it to the function.
                   // e.g. saying "Show me Batman and Robin" is the same as calling showFlickr('Batman and Robin');
                   'hello': hello,
+                  'how are you *': howareyoudoing,
                 };
 
               // Add our commands to annyang
