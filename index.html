@@ -9,7 +9,20 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="screenfull.min.js"></script>
         <script type="text/javascript" src="samaritan.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <script>
+            var commands = {
+              // annyang will capture anything after a splat (*) and pass it to the function.
+              // e.g. saying "Show me Batman and Robin" is the same as calling showFlickr('Batman and Robin');
+              'show me *tag': printGreeting,
+            };
+            
+            var printGreeting = function(tag) {
+              console.log(tag);
+            }
+        </script>
     </head>
     <body>
         <div id="main">
