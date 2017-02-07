@@ -15,13 +15,15 @@
         <script>
             
             if (annyang) {
+                console.log('Annyang started successfully');
+              var hello = function(){
+                    console.log('First voice command recieved');
+                    };
               // Let's define our first command. First the text we expect, and then the function it should call
               var commands = {
                   // annyang will capture anything after a splat (*) and pass it to the function.
                   // e.g. saying "Show me Batman and Robin" is the same as calling showFlickr('Batman and Robin');
-                  'hello': function(){
-                    console.log('First voice command recieved');
-                      }
+                  'hello': hello,
                 };
 
               // Add our commands to annyang
