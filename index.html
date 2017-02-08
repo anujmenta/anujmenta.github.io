@@ -16,6 +16,7 @@
         <script>
             
             if (annyang) {
+              annyang.setLanguage('en-IN')
               console.log('Annyang started successfully');
               var hello = function(){
                     console.log('First voice command recieved');
@@ -24,12 +25,16 @@
               var howareyoudoing = function(){
                     executeSamaritan("I am doing just fine. How are you?");
                     };
+              var clearscreen = function(){
+                    console.clear();
+                    };
               // Let's define our first command. First the text we expect, and then the function it should call
               var commands = {
                   // annyang will capture anything after a splat (*) and pass it to the function.
                   // e.g. saying "Show me Batman and Robin" is the same as calling showFlickr('Batman and Robin');
                   'hello': hello,
                   'how are you doing': howareyoudoing,
+                  'clear the screen' : clearscreen,
                 };
 
               // Add our commands to annyang
